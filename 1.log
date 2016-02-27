@@ -1,0 +1,761 @@
+2016-02-22T22:22:20.570-0500 I CONTROL  [initandlisten] MongoDB starting : pid=62348 port=27017 dbpath=/data/rs1 64-bit host=Jonathans-MacBook-Pro.local
+2016-02-22T22:22:20.571-0500 I CONTROL  [initandlisten] db version v3.2.1
+2016-02-22T22:22:20.571-0500 I CONTROL  [initandlisten] git version: a14d55980c2cdc565d4704a7e3ad37e4e535c1b2
+2016-02-22T22:22:20.571-0500 I CONTROL  [initandlisten] allocator: system
+2016-02-22T22:22:20.571-0500 I CONTROL  [initandlisten] modules: none
+2016-02-22T22:22:20.571-0500 I CONTROL  [initandlisten] build environment:
+2016-02-22T22:22:20.571-0500 I CONTROL  [initandlisten]     distarch: x86_64
+2016-02-22T22:22:20.571-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-02-22T22:22:20.571-0500 I CONTROL  [initandlisten] options: { net: { port: 27017 }, processManagement: { fork: true }, replication: { oplogSizeMB: 64, replSet: "m101" }, storage: { dbPath: "/data/rs1", mmapv1: { smallFiles: true } }, systemLog: { destination: "file", path: "1.log" } }
+2016-02-22T22:22:20.572-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=4G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-02-22T22:22:24.653-0500 W STORAGE  [initandlisten] Detected configuration for non-active storage engine mmapv1 when current storage engine is wiredTiger
+2016-02-22T22:22:24.670-0500 I CONTROL  [initandlisten] 
+2016-02-22T22:22:24.671-0500 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2016-02-22T22:22:26.234-0500 I QUERY    [initandlisten] query admin.system.roles planSummary: EOF ntoreturn:0 ntoskip:0 keysExamined:0 docsExamined:0 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:0 nreturned:0 reslen:20 locks:{ Global: { acquireCount: { r: 4, W: 2 } }, Database: { acquireCount: { r: 1 } }, Collection: { acquireCount: { r: 1 } } } 118ms
+2016-02-22T22:22:29.484-0500 I REPL     [initandlisten] Did not find local voted for document at startup;  NoMatchingDocument Did not find replica set lastVote document in local.replset.election
+2016-02-22T22:22:29.484-0500 I REPL     [initandlisten] Did not find local replica set configuration document at startup;  NoMatchingDocument Did not find replica set configuration document in local.system.replset
+2016-02-22T22:22:29.499-0500 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-02-22T22:22:29.508-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/data/rs1/diagnostic.data'
+2016-02-22T22:22:30.269-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
+2016-02-22T22:23:18.137-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55799 #1 (1 connection now open)
+2016-02-22T22:23:36.610-0500 I REPL     [conn1] replSetInitiate admin command received from client
+2016-02-22T22:23:36.737-0500 I REPL     [conn1] replSetInitiate config object with 3 members parses ok
+2016-02-22T22:23:36.789-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-22T22:23:36.790-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-22T22:23:36.800-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55812 #2 (2 connections now open)
+2016-02-22T22:23:36.801-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55813 #3 (3 connections now open)
+2016-02-22T22:23:36.807-0500 I REPL     [conn1] ******
+2016-02-22T22:23:36.807-0500 I REPL     [conn1] creating replication oplog of size: 64MB...
+2016-02-22T22:23:37.205-0500 I STORAGE  [conn1] Starting WiredTigerRecordStoreThread local.oplog.rs
+2016-02-22T22:23:37.206-0500 I STORAGE  [conn1] The size storer reports that the oplog contains 0 records totaling to 0 bytes
+2016-02-22T22:23:37.207-0500 I STORAGE  [conn1] Scanning the oplog to determine where to place markers for truncation
+2016-02-22T22:23:38.358-0500 I REPL     [conn1] ******
+2016-02-22T22:23:39.353-0500 I REPL     [ReplicationExecutor] New replica set config in use: { _id: "m101", version: 1, protocolVersion: 1, members: [ { _id: 0, host: "localhost:27017", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 1, host: "localhost:27018", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 }, { _id: 2, host: "localhost:27019", arbiterOnly: false, buildIndexes: true, hidden: false, priority: 1.0, tags: {}, slaveDelay: 0, votes: 1 } ], settings: { chainingAllowed: true, heartbeatIntervalMillis: 2000, heartbeatTimeoutSecs: 10, electionTimeoutMillis: 10000, getLastErrorModes: {}, getLastErrorDefaults: { w: 1, wtimeout: 0 } } }
+2016-02-22T22:23:39.353-0500 I REPL     [ReplicationExecutor] This node is localhost:27017 in the config
+2016-02-22T22:23:39.353-0500 I REPL     [ReplicationExecutor] transition to STARTUP2
+2016-02-22T22:23:39.392-0500 I REPL     [conn1] Starting replication applier threads
+2016-02-22T22:23:39.393-0500 I REPL     [ReplicationExecutor] transition to RECOVERING
+2016-02-22T22:23:39.393-0500 I COMMAND  [conn1] command local.oplog.rs command: replSetInitiate { replSetInitiate: { _id: "m101", members: [ { _id: 0.0, host: "localhost:27017" }, { _id: 1.0, host: "localhost:27018" }, { _id: 2.0, host: "localhost:27019" } ] } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:22 locks:{ Global: { acquireCount: { r: 5, w: 3, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 109419 } }, Database: { acquireCount: { w: 2, W: 1 } }, Metadata: { acquireCount: { w: 1 } }, oplog: { acquireCount: { w: 2 } } } protocol:op_command 2822ms
+2016-02-22T22:23:39.393-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state STARTUP
+2016-02-22T22:23:39.393-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state STARTUP
+2016-02-22T22:23:39.395-0500 I REPL     [ReplicationExecutor] transition to SECONDARY
+2016-02-22T22:23:40.835-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55814 #4 (4 connections now open)
+2016-02-22T22:23:40.835-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55815 #5 (5 connections now open)
+2016-02-22T22:23:40.836-0500 I NETWORK  [conn4] end connection 127.0.0.1:55814 (4 connections now open)
+2016-02-22T22:23:40.836-0500 I NETWORK  [conn5] end connection 127.0.0.1:55815 (3 connections now open)
+2016-02-22T22:23:44.395-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state STARTUP2
+2016-02-22T22:23:44.395-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state STARTUP2
+2016-02-22T22:23:48.660-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55824 #6 (4 connections now open)
+2016-02-22T22:23:49.635-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55825 #7 (5 connections now open)
+2016-02-22T22:23:49.756-0500 I NETWORK  [conn6] end connection 127.0.0.1:55824 (4 connections now open)
+2016-02-22T22:23:49.910-0500 I NETWORK  [conn7] end connection 127.0.0.1:55825 (3 connections now open)
+2016-02-22T22:23:50.164-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-22T22:23:50.164-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-22T22:23:51.244-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-22T22:23:52.338-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 1
+2016-02-22T22:23:52.340-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-22T22:23:52.474-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-22T22:23:52.475-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-22T22:23:52.476-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-22T22:23:52.584-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-22T22:23:52.585-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-22T22:23:54.924-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55829 #8 (4 connections now open)
+2016-02-22T22:23:54.925-0500 I NETWORK  [conn8] end connection 127.0.0.1:55829 (3 connections now open)
+2016-02-22T22:23:54.926-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55830 #9 (4 connections now open)
+2016-02-22T22:23:54.940-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55833 #10 (5 connections now open)
+2016-02-22T22:23:54.973-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55834 #11 (6 connections now open)
+2016-02-22T22:23:54.974-0500 I NETWORK  [conn11] end connection 127.0.0.1:55834 (5 connections now open)
+2016-02-22T22:23:54.974-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55835 #12 (6 connections now open)
+2016-02-22T22:23:54.976-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55838 #13 (7 connections now open)
+2016-02-22T22:26:33.100-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55859 #14 (8 connections now open)
+2016-02-22T22:26:33.127-0500 I NETWORK  [conn14] end connection 127.0.0.1:55859 (7 connections now open)
+2016-02-22T22:26:33.135-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55860 #15 (8 connections now open)
+2016-02-22T22:26:33.136-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55861 #16 (9 connections now open)
+2016-02-22T22:26:33.137-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55862 #17 (10 connections now open)
+2016-02-22T22:26:33.138-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55863 #18 (11 connections now open)
+2016-02-22T22:26:33.139-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55864 #19 (12 connections now open)
+2016-02-22T22:26:33.186-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55875 #20 (13 connections now open)
+2016-02-22T22:26:33.186-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:55876 #21 (14 connections now open)
+2016-02-22T22:26:33.192-0500 I NETWORK  [conn15] end connection 127.0.0.1:55860 (13 connections now open)
+2016-02-22T22:26:33.192-0500 I NETWORK  [conn16] end connection 127.0.0.1:55861 (13 connections now open)
+2016-02-22T22:26:33.192-0500 I NETWORK  [conn17] end connection 127.0.0.1:55862 (13 connections now open)
+2016-02-22T22:26:33.192-0500 I NETWORK  [conn18] end connection 127.0.0.1:55863 (13 connections now open)
+2016-02-22T22:26:33.192-0500 I NETWORK  [conn19] end connection 127.0.0.1:55864 (11 connections now open)
+2016-02-22T22:26:33.194-0500 I NETWORK  [conn20] end connection 127.0.0.1:55875 (8 connections now open)
+2016-02-22T22:26:33.195-0500 I NETWORK  [conn21] end connection 127.0.0.1:55876 (7 connections now open)
+2016-02-22T22:37:35.413-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.0.11, "nodename nor servname provided, or not known"), (192.168.0.11, "nodename nor servname provided, or not known") ]
+2016-02-22T23:21:29.013-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-22T23:21:32.383-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56476 #22 (8 connections now open)
+2016-02-22T23:21:32.398-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-22T23:21:32.398-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56482 #23 (9 connections now open)
+2016-02-22T23:21:32.398-0500 I REPL     [replExecDBWorker-2] transition to SECONDARY
+2016-02-22T23:21:32.398-0500 I COMMAND  [conn10] command local.oplog.rs command: getMore { getMore: 18957529658, collection: "oplog.rs", maxTimeMS: 5000, term: 1, lastKnownCommittedOpTime: { ts: Timestamp 1456197832000|2, t: 1 } } cursorid:18957529658 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 2056308ms
+2016-02-22T23:21:32.399-0500 I NETWORK  [conn1] end connection 127.0.0.1:55799 (8 connections now open)
+2016-02-22T23:21:32.399-0500 I NETWORK  [conn12] end connection 127.0.0.1:55835 (8 connections now open)
+2016-02-22T23:21:32.399-0500 I NETWORK  [conn9] end connection 127.0.0.1:55830 (8 connections now open)
+2016-02-22T23:21:32.399-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-22T23:21:32.399-0500 I COMMAND  [conn13] command local.oplog.rs command: getMore { getMore: 20099544988, collection: "oplog.rs", maxTimeMS: 5000, term: 1, lastKnownCommittedOpTime: { ts: Timestamp 1456197832000|2, t: 1 } } cursorid:20099544988 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 2056308ms
+2016-02-22T23:21:32.399-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 3232, after storageEngine: 3232, after wiredTiger: 3232, at end: 3232 }
+2016-02-22T23:21:32.400-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56488 #24 (10 connections now open)
+2016-02-22T23:21:33.267-0500 I NETWORK  [conn10] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:55833] 
+2016-02-22T23:21:33.267-0500 I NETWORK  [conn13] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:55838] 
+2016-02-22T23:21:33.267-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56491 #25 (6 connections now open)
+2016-02-22T23:21:33.267-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56494 #26 (7 connections now open)
+2016-02-22T23:21:33.267-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-22T23:21:33.267-0500 I COMMAND  [conn22] command admin.$cmd command: isMaster { isMaster: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:329 locks:{} protocol:op_query 868ms
+2016-02-22T23:21:33.267-0500 I COMMAND  [conn23] command admin.$cmd command: isMaster { isMaster: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:329 locks:{} protocol:op_query 868ms
+2016-02-22T23:21:33.268-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56500 #27 (8 connections now open)
+2016-02-22T23:21:33.268-0500 I NETWORK  [conn22] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:56476] 
+2016-02-22T23:21:33.268-0500 I COMMAND  [conn3] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 4245ms
+2016-02-22T23:21:33.268-0500 I NETWORK  [conn23] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:56482] 
+2016-02-22T23:21:33.268-0500 I COMMAND  [conn2] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 4245ms
+2016-02-22T23:21:33.268-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56503 #28 (8 connections now open)
+2016-02-22T23:21:33.268-0500 I NETWORK  [conn3] end connection 127.0.0.1:55813 (5 connections now open)
+2016-02-22T23:21:33.268-0500 I NETWORK  [conn2] end connection 127.0.0.1:55812 (6 connections now open)
+2016-02-22T23:21:38.272-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state PRIMARY
+2016-02-22T23:21:39.087-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27019
+2016-02-22T23:21:39.381-0500 I COMMAND  [conn24] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 2 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:315 locks:{} protocol:op_command 1107ms
+2016-02-22T23:21:39.382-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27019
+2016-02-22T23:21:39.384-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27019
+2016-02-22T23:26:46.933-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.0.11, "nodename nor servname provided, or not known"), (192.168.0.11, "nodename nor servname provided, or not known") ]
+2016-02-22T23:41:52.821-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.0.11, "nodename nor servname provided, or not known"), (192.168.0.11, "nodename nor servname provided, or not known") ]
+2016-02-22T23:46:15.794-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56972 #29 (6 connections now open)
+2016-02-22T23:48:02.231-0500 I NETWORK  [conn29] end connection 127.0.0.1:56972 (5 connections now open)
+2016-02-22T23:56:59.033-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.0.11, "nodename nor servname provided, or not known"), (192.168.0.11, "nodename nor servname provided, or not known") ]
+2016-02-23T00:12:04.291-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (192.168.0.11, "nodename nor servname provided, or not known"), (192.168.0.11, "nodename nor servname provided, or not known") ]
+2016-02-23T22:40:06.959-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-23T22:40:07.307-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-23T22:40:07.308-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-23T22:40:07.309-0500 I COMMAND  [conn24] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 2 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 1832ms
+2016-02-23T22:40:07.309-0500 I COMMAND  [conn28] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 2 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 1832ms
+2016-02-23T22:40:07.627-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 20, after asserts: 20, after connections: 20, after extra_info: 20, after globalLock: 20, after locks: 20, after network: 20, after opcounters: 20, after opcountersRepl: 20, after repl: 2060, after storageEngine: 2060, after wiredTiger: 2060, at end: 2330 }
+2016-02-23T22:40:07.987-0500 I COMMAND  [conn24] command local.replset.election command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 2, candidateIndex: 1, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456201293000|1, t: 2 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:63 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 1835 } } } protocol:op_command 674ms
+2016-02-23T22:40:07.988-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-23T22:40:13.965-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 3
+2016-02-23T22:40:13.965-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-23T22:40:13.965-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-23T22:40:14.360-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-23T22:40:15.036-0500 I REPL     [ReplicationExecutor] Error in heartbeat request to localhost:27018; ExceededTimeLimit Couldn't get a connection within the time limit
+2016-02-23T22:40:17.428-0500 I COMMAND  [conn28] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 2 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:315 locks:{} protocol:op_command 2349ms
+2016-02-23T22:40:17.467-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57256 #30 (6 connections now open)
+2016-02-23T22:40:17.468-0500 I NETWORK  [conn30] end connection 127.0.0.1:57256 (5 connections now open)
+2016-02-23T22:40:17.468-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57257 #31 (6 connections now open)
+2016-02-23T22:40:18.224-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57265 #32 (7 connections now open)
+2016-02-23T22:40:18.225-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57266 #33 (8 connections now open)
+2016-02-23T22:40:18.225-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-23T22:40:18.226-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-23T22:40:18.226-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-23T22:40:18.227-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-23T22:40:18.227-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-23T22:40:18.227-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-23T22:40:18.228-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-23T22:40:19.400-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57282 #34 (9 connections now open)
+2016-02-23T22:40:19.401-0500 I NETWORK  [conn34] end connection 127.0.0.1:57282 (8 connections now open)
+2016-02-23T22:40:19.402-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57283 #35 (9 connections now open)
+2016-02-23T22:40:23.324-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57286 #36 (10 connections now open)
+2016-02-23T22:40:23.841-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain address information for hostname Jonathans-MacBook-Pro.local: nodename nor servname provided, or not known
+2016-02-23T22:52:27.437-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-23T23:07:33.178-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-23T23:22:38.101-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-23T23:37:43.681-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-23T23:52:48.781-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-24T00:07:54.374-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-24T00:22:59.517-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-24T00:38:04.928-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-24T02:46:35.008-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-24T02:46:38.431-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-24T02:46:38.431-0500 I REPL     [replExecDBWorker-0] transition to SECONDARY
+2016-02-24T02:46:38.431-0500 I COMMAND  [conn32] command local.oplog.rs command: getMore { getMore: 17721458298, collection: "oplog.rs", maxTimeMS: 5000, term: 3, lastKnownCommittedOpTime: { ts: Timestamp 1456285214000|1, t: 3 } } cursorid:17721458298 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7195993ms
+2016-02-24T02:46:38.431-0500 I NETWORK  [conn31] end connection 127.0.0.1:57257 (9 connections now open)
+2016-02-24T02:46:38.431-0500 I NETWORK  [conn33] end connection 127.0.0.1:57266 (9 connections now open)
+2016-02-24T02:46:38.431-0500 I NETWORK  [conn32] end connection 127.0.0.1:57265 (9 connections now open)
+2016-02-24T02:46:38.431-0500 I NETWORK  [conn26] end connection 127.0.0.1:56494 (9 connections now open)
+2016-02-24T02:46:38.431-0500 I NETWORK  [conn35] end connection 127.0.0.1:57283 (9 connections now open)
+2016-02-24T02:46:38.431-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T02:46:38.431-0500 I COMMAND  [conn36] command local.oplog.rs command: getMore { getMore: 19022913994, collection: "oplog.rs", maxTimeMS: 5000, term: 3, lastKnownCommittedOpTime: { ts: Timestamp 1456285214000|1, t: 3 } } cursorid:19022913994 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7194250ms
+2016-02-24T02:46:38.431-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 3210, after storageEngine: 3210, after wiredTiger: 3210, at end: 3210 }
+2016-02-24T02:46:38.458-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58676 #37 (9 connections now open)
+2016-02-24T02:46:38.550-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-24T02:46:38.551-0500 I COMMAND  [conn24] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 3 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 3542ms
+2016-02-24T02:46:38.551-0500 I NETWORK  [conn24] end connection 127.0.0.1:56488 (5 connections now open)
+2016-02-24T02:46:38.551-0500 I COMMAND  [conn27] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 3 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 3538ms
+2016-02-24T02:46:38.551-0500 I NETWORK  [conn27] end connection 127.0.0.1:56500 (4 connections now open)
+2016-02-24T02:46:38.552-0500 I COMMAND  [conn25] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 3 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 130ms
+2016-02-24T02:46:38.552-0500 I COMMAND  [conn28] command local.replset.election command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 3, candidateIndex: 2, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456285214000|1, t: 3 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:63 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_command 131ms
+2016-02-24T02:46:38.552-0500 I NETWORK  [conn28] end connection 127.0.0.1:56503 (3 connections now open)
+2016-02-24T02:46:38.556-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58679 #38 (4 connections now open)
+2016-02-24T02:46:38.556-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58682 #39 (5 connections now open)
+2016-02-24T02:46:38.556-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58685 #40 (6 connections now open)
+2016-02-24T02:46:38.906-0500 I NETWORK  [conn36] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:57286] 
+2016-02-24T02:46:43.441-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state PRIMARY
+2016-02-24T02:46:43.464-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27019
+2016-02-24T02:46:43.466-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27019
+2016-02-24T02:46:43.469-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27019
+2016-02-24T04:47:28.010-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-24T04:47:31.448-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-24T04:47:31.606-0500 I REPL     [SyncSourceFeedback] SyncSourceFeedback error sending update: network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27019' 
+2016-02-24T04:47:31.607-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 3410, after storageEngine: 3410, after wiredTiger: 3410, at end: 3410 }
+2016-02-24T04:47:31.607-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-24T04:47:31.608-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-24T04:47:31.608-0500 I REPL     [SyncSourceFeedback] updateUpstream failed: HostUnreachable network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27019' , will retry
+2016-02-24T04:47:31.613-0500 I COMMAND  [conn40] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 4 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3601ms
+2016-02-24T04:47:31.613-0500 I NETWORK  [conn40] end connection 127.0.0.1:58685 (4 connections now open)
+2016-02-24T04:47:31.613-0500 I COMMAND  [conn39] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 4 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3602ms
+2016-02-24T04:47:31.613-0500 I COMMAND  [conn37] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 4 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 182ms
+2016-02-24T04:47:31.613-0500 I COMMAND  [conn38] command admin.$cmd command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 4, candidateIndex: 1, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456299999000|1, t: 4 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:98 locks:{} protocol:op_command 183ms
+2016-02-24T04:47:31.614-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T04:47:31.614-0500 I NETWORK  [conn38] end connection 127.0.0.1:58679 (3 connections now open)
+2016-02-24T04:47:31.615-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27018 because: already voted for another candidate this term, resp:{ term: 5, voteGranted: false, reason: "already voted for another candidate this term", ok: 1.0 }
+2016-02-24T04:47:31.615-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T04:47:31.615-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 5
+2016-02-24T04:47:31.615-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-24T04:47:31.615-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-24T04:47:31.852-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T04:47:31.852-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T04:47:32.613-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-24T04:47:37.458-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58754 #41 (4 connections now open)
+2016-02-24T04:47:37.459-0500 I NETWORK  [conn41] end connection 127.0.0.1:58754 (3 connections now open)
+2016-02-24T04:47:37.459-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58755 #42 (4 connections now open)
+2016-02-24T04:47:37.465-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58758 #43 (5 connections now open)
+2016-02-24T04:47:37.508-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58759 #44 (6 connections now open)
+2016-02-24T04:47:37.873-0500 I NETWORK  [conn44] end connection 127.0.0.1:58759 (5 connections now open)
+2016-02-24T04:47:37.874-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58761 #45 (6 connections now open)
+2016-02-24T04:47:37.875-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58764 #46 (7 connections now open)
+2016-02-24T06:48:21.011-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-24T06:48:21.011-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-24T06:48:21.012-0500 I REPL     [replExecDBWorker-1] transition to SECONDARY
+2016-02-24T06:48:21.013-0500 I NETWORK  [conn45] end connection 127.0.0.1:58761 (6 connections now open)
+2016-02-24T06:48:21.013-0500 I NETWORK  [conn42] end connection 127.0.0.1:58755 (6 connections now open)
+2016-02-24T06:48:21.014-0500 I COMMAND  [conn43] command local.oplog.rs command: getMore { getMore: 19922021225, collection: "oplog.rs", maxTimeMS: 5000, term: 5, lastKnownCommittedOpTime: { ts: Timestamp 1456307252000|1, t: 5 } } cursorid:19922021225 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7197860ms
+2016-02-24T06:48:21.014-0500 I NETWORK  [conn43] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:58758] 
+2016-02-24T06:48:21.014-0500 I COMMAND  [conn46] command local.oplog.rs command: getMore { getMore: 18124640972, collection: "oplog.rs", maxTimeMS: 5000, term: 5, lastKnownCommittedOpTime: { ts: Timestamp 1456307252000|1, t: 5 } } cursorid:18124640972 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7197860ms
+2016-02-24T06:48:21.014-0500 I NETWORK  [conn46] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:58764] 
+2016-02-24T06:48:21.014-0500 I NETWORK  [conn39] end connection 127.0.0.1:58682 (2 connections now open)
+2016-02-24T06:48:21.014-0500 I NETWORK  [conn37] end connection 127.0.0.1:58676 (1 connection now open)
+2016-02-24T06:48:21.015-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T06:48:21.016-0500 I NETWORK  [conn25] end connection 127.0.0.1:56491 (0 connections now open)
+2016-02-24T06:48:21.016-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-24T06:48:21.018-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58777 #47 (1 connection now open)
+2016-02-24T06:48:21.029-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58780 #48 (2 connections now open)
+2016-02-24T06:48:21.031-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58786 #49 (3 connections now open)
+2016-02-24T06:48:21.042-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58791 #50 (4 connections now open)
+2016-02-24T06:48:24.572-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58795 #51 (5 connections now open)
+2016-02-24T06:48:26.017-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state PRIMARY
+2016-02-24T06:48:26.047-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27019
+2016-02-24T06:48:26.048-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27019
+2016-02-24T06:48:26.049-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27019
+2016-02-24T08:49:14.011-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-24T08:49:14.011-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-24T08:49:17.511-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27019
+2016-02-24T08:49:17.511-0500 I REPL     [SyncSourceFeedback] SyncSourceFeedback error sending update: network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27019' 
+2016-02-24T08:49:17.511-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27019
+2016-02-24T08:49:17.511-0500 I ASIO     [ReplicationExecutor] after drop, pool was empty, going to spawn some connections
+2016-02-24T08:49:17.512-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-24T08:49:17.512-0500 I REPL     [SyncSourceFeedback] updateUpstream failed: HostUnreachable network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27019' , will retry
+2016-02-24T08:49:17.512-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 3270, after storageEngine: 3270, after wiredTiger: 3270, at end: 3270 }
+2016-02-24T08:49:17.512-0500 I COMMAND  [conn48] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 6 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3500ms
+2016-02-24T08:49:17.512-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-24T08:49:17.512-0500 I COMMAND  [conn50] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 6 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3497ms
+2016-02-24T08:49:17.512-0500 I NETWORK  [conn48] end connection 127.0.0.1:58780 (4 connections now open)
+2016-02-24T08:49:17.512-0500 I COMMAND  [conn51] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 6 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3497ms
+2016-02-24T08:49:17.512-0500 I COMMAND  [conn49] command local.replset.election command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 6, candidateIndex: 1, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456314502000|1, t: 6 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:63 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_command 3500ms
+2016-02-24T08:49:17.512-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 7
+2016-02-24T08:49:17.512-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-24T08:49:17.512-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-24T08:49:17.682-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T08:49:17.682-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T08:49:17.682-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T08:49:17.682-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T08:49:17.683-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T08:49:18.515-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-24T08:49:22.744-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58879 #52 (5 connections now open)
+2016-02-24T08:49:22.784-0500 I NETWORK  [conn52] end connection 127.0.0.1:58879 (4 connections now open)
+2016-02-24T08:49:22.784-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58880 #53 (5 connections now open)
+2016-02-24T08:49:22.786-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58883 #54 (6 connections now open)
+2016-02-24T08:49:23.090-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58890 #55 (7 connections now open)
+2016-02-24T08:49:23.091-0500 I NETWORK  [conn55] end connection 127.0.0.1:58890 (6 connections now open)
+2016-02-24T08:49:23.091-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58891 #56 (7 connections now open)
+2016-02-24T08:49:23.093-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58894 #57 (8 connections now open)
+2016-02-24T10:50:07.009-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-24T10:50:07.009-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-24T10:50:07.015-0500 I REPL     [replExecDBWorker-2] transition to SECONDARY
+2016-02-24T10:50:07.016-0500 I NETWORK  [conn56] end connection 127.0.0.1:58891 (7 connections now open)
+2016-02-24T10:50:07.016-0500 I NETWORK  [conn53] end connection 127.0.0.1:58880 (7 connections now open)
+2016-02-24T10:50:07.016-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T10:50:07.017-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-24T10:50:07.018-0500 I COMMAND  [conn54] command local.oplog.rs command: getMore { getMore: 17850666898, collection: "oplog.rs", maxTimeMS: 5000, term: 7, lastKnownCommittedOpTime: { ts: Timestamp 1456321758000|1, t: 7 } } cursorid:17850666898 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7198354ms
+2016-02-24T10:50:07.018-0500 I NETWORK  [conn54] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:58883] 
+2016-02-24T10:50:07.018-0500 I COMMAND  [conn57] command local.oplog.rs command: getMore { getMore: 19857387094, collection: "oplog.rs", maxTimeMS: 5000, term: 7, lastKnownCommittedOpTime: { ts: Timestamp 1456321758000|1, t: 7 } } cursorid:19857387094 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7198354ms
+2016-02-24T10:50:07.018-0500 I NETWORK  [conn57] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:58894] 
+2016-02-24T10:50:07.021-0500 I NETWORK  [conn49] end connection 127.0.0.1:58786 (3 connections now open)
+2016-02-24T10:50:07.022-0500 I NETWORK  [conn50] end connection 127.0.0.1:58791 (2 connections now open)
+2016-02-24T10:50:07.025-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58926 #58 (3 connections now open)
+2016-02-24T10:50:07.035-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58929 #59 (4 connections now open)
+2016-02-24T10:50:12.019-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state PRIMARY
+2016-02-24T10:50:12.037-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27019
+2016-02-24T10:50:12.037-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27019
+2016-02-24T10:50:12.039-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27019
+2016-02-24T12:51:00.008-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-24T12:51:03.462-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58999 #60 (5 connections now open)
+2016-02-24T12:51:03.547-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-24T12:51:03.547-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27019
+2016-02-24T12:51:03.547-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27019
+2016-02-24T12:51:03.547-0500 I REPL     [SyncSourceFeedback] SyncSourceFeedback error sending update: network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27019' 
+2016-02-24T12:51:04.582-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27019
+2016-02-24T12:51:04.582-0500 I ASIO     [ReplicationExecutor] after drop, pool was empty, going to spawn some connections
+2016-02-24T12:51:04.583-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-24T12:51:04.583-0500 I COMMAND  [conn60] command admin.$cmd command: isMaster { isMaster: 1 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:358 locks:{} protocol:op_query 1036ms
+2016-02-24T12:51:04.583-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-24T12:51:04.583-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 4221, after storageEngine: 4221, after wiredTiger: 4221, at end: 4221 }
+2016-02-24T12:51:04.583-0500 I REPL     [SyncSourceFeedback] updateUpstream failed: HostUnreachable network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27019' , will retry
+2016-02-24T12:51:04.584-0500 I COMMAND  [conn58] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 8 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 4575ms
+2016-02-24T12:51:04.584-0500 I COMMAND  [conn51] command admin.$cmd command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 8, candidateIndex: 1, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456329008000|1, t: 8 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:98 locks:{} protocol:op_command 1123ms
+2016-02-24T12:51:04.584-0500 I COMMAND  [conn59] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 8 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 4575ms
+2016-02-24T12:51:04.584-0500 I NETWORK  [conn58] end connection 127.0.0.1:58926 (4 connections now open)
+2016-02-24T12:51:04.585-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 9
+2016-02-24T12:51:04.585-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-24T12:51:04.585-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-24T12:51:04.586-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T12:51:04.587-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T12:51:04.587-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T12:51:04.588-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T12:51:05.593-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-24T12:51:09.624-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59023 #61 (5 connections now open)
+2016-02-24T12:51:09.625-0500 I NETWORK  [conn61] end connection 127.0.0.1:59023 (4 connections now open)
+2016-02-24T12:51:09.625-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59024 #62 (5 connections now open)
+2016-02-24T12:51:09.627-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59027 #63 (6 connections now open)
+2016-02-24T12:51:10.502-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59036 #64 (7 connections now open)
+2016-02-24T12:51:10.503-0500 I NETWORK  [conn64] end connection 127.0.0.1:59036 (6 connections now open)
+2016-02-24T12:51:10.504-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59037 #65 (7 connections now open)
+2016-02-24T12:51:10.572-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59040 #66 (8 connections now open)
+2016-02-24T14:51:53.009-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-24T14:51:56.406-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-24T14:51:56.407-0500 I REPL     [replExecDBWorker-0] transition to SECONDARY
+2016-02-24T14:51:56.407-0500 I COMMAND  [conn63] command local.oplog.rs command: getMore { getMore: 20192506990, collection: "oplog.rs", maxTimeMS: 5000, term: 9, lastKnownCommittedOpTime: { ts: Timestamp 1456336265000|1, t: 9 } } cursorid:20192506990 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7200872ms
+2016-02-24T14:51:56.407-0500 I NETWORK  [conn51] end connection 127.0.0.1:58795 (7 connections now open)
+2016-02-24T14:51:56.407-0500 I NETWORK  [conn47] end connection 127.0.0.1:58777 (7 connections now open)
+2016-02-24T14:51:56.407-0500 I NETWORK  [conn63] end connection 127.0.0.1:59027 (7 connections now open)
+2016-02-24T14:51:56.407-0500 I NETWORK  [conn65] end connection 127.0.0.1:59037 (7 connections now open)
+2016-02-24T14:51:56.407-0500 I NETWORK  [conn62] end connection 127.0.0.1:59024 (7 connections now open)
+2016-02-24T14:51:56.407-0500 I COMMAND  [conn66] command local.oplog.rs command: getMore { getMore: 17380120226, collection: "oplog.rs", maxTimeMS: 5000, term: 9, lastKnownCommittedOpTime: { ts: Timestamp 1456336265000|1, t: 9 } } cursorid:17380120226 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7200772ms
+2016-02-24T14:51:56.407-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 3250, after storageEngine: 3250, after wiredTiger: 3250, at end: 3250 }
+2016-02-24T14:51:56.407-0500 I COMMAND  [conn60] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 9 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 3396ms
+2016-02-24T14:51:56.407-0500 I NETWORK  [conn66] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:59040] 
+2016-02-24T14:51:56.407-0500 I COMMAND  [conn59] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 9 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 3393ms
+2016-02-24T14:51:56.421-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-24T14:51:56.719-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T14:52:01.426-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state PRIMARY
+2016-02-24T14:52:01.441-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27018
+2016-02-24T14:52:01.443-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27018
+2016-02-24T14:52:01.453-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27018
+2016-02-24T16:52:46.010-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-24T16:52:49.416-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-24T16:52:49.416-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-24T16:52:49.416-0500 I COMMAND  [conn59] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 10 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3405ms
+2016-02-24T16:52:49.416-0500 I COMMAND  [conn60] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 10 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3405ms
+2016-02-24T16:52:49.416-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 3210, after storageEngine: 3210, after wiredTiger: 3210, at end: 3210 }
+2016-02-24T16:52:49.426-0500 I REPL     [ReplicationExecutor] Error in heartbeat request to localhost:27018; HostUnreachable End of file
+2016-02-24T16:52:49.451-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59150 #67 (3 connections now open)
+2016-02-24T16:52:50.025-0500 I NETWORK  [conn59] end connection 127.0.0.1:58929 (1 connection now open)
+2016-02-24T16:52:50.025-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-24T16:52:50.025-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59156 #68 (3 connections now open)
+2016-02-24T16:52:50.025-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59162 #69 (4 connections now open)
+2016-02-24T16:52:50.025-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27018
+2016-02-24T16:52:50.025-0500 I ASIO     [ReplicationExecutor] after drop, pool was empty, going to spawn some connections
+2016-02-24T16:52:50.026-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59165 #70 (5 connections now open)
+2016-02-24T16:52:50.026-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-24T16:52:50.026-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27018 because: already voted for another candidate this term, resp:{ term: 11, voteGranted: false, reason: "already voted for another candidate this term", ok: 1.0 }
+2016-02-24T16:52:50.026-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27019 because: already voted for another candidate this term, resp:{ term: 11, voteGranted: false, reason: "already voted for another candidate this term", ok: 1.0 }
+2016-02-24T16:52:50.026-0500 I REPL     [ReplicationExecutor] not becoming primary, we received insufficient votes
+2016-02-24T16:52:50.028-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-24T16:52:55.032-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state PRIMARY
+2016-02-24T16:52:55.446-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27019
+2016-02-24T16:52:55.448-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27019
+2016-02-24T16:52:55.450-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27019
+2016-02-24T18:53:39.010-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-24T18:53:39.010-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-24T18:53:39.010-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-24T18:53:39.012-0500 I NETWORK  [conn60] end connection 127.0.0.1:58999 (4 connections now open)
+2016-02-24T18:53:39.014-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-24T18:53:39.015-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 12
+2016-02-24T18:53:39.015-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-24T18:53:39.015-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-24T18:53:39.015-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59233 #71 (5 connections now open)
+2016-02-24T18:53:39.017-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-24T18:53:42.658-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-24T18:53:42.661-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T18:53:42.661-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59239 #72 (6 connections now open)
+2016-02-24T18:53:42.661-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T18:53:42.662-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T18:53:43.044-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59249 #73 (7 connections now open)
+2016-02-24T18:53:43.045-0500 I NETWORK  [conn73] end connection 127.0.0.1:59249 (6 connections now open)
+2016-02-24T18:53:43.045-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59250 #74 (7 connections now open)
+2016-02-24T18:53:43.047-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59253 #75 (8 connections now open)
+2016-02-24T18:53:43.227-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T18:53:44.679-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59254 #76 (9 connections now open)
+2016-02-24T18:53:44.680-0500 I NETWORK  [conn76] end connection 127.0.0.1:59254 (8 connections now open)
+2016-02-24T18:53:44.680-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59255 #77 (9 connections now open)
+2016-02-24T18:53:44.682-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59258 #78 (10 connections now open)
+2016-02-24T20:54:32.008-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-24T20:54:32.008-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-24T20:54:32.009-0500 I REPL     [replExecDBWorker-0] transition to SECONDARY
+2016-02-24T20:54:32.009-0500 I NETWORK  [conn77] end connection 127.0.0.1:59255 (9 connections now open)
+2016-02-24T20:54:32.009-0500 I NETWORK  [conn70] end connection 127.0.0.1:59165 (9 connections now open)
+2016-02-24T20:54:32.011-0500 I NETWORK  [conn69] end connection 127.0.0.1:59162 (9 connections now open)
+2016-02-24T20:54:32.013-0500 I NETWORK  [conn74] end connection 127.0.0.1:59250 (9 connections now open)
+2016-02-24T20:54:32.014-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T20:54:32.014-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-24T20:54:32.014-0500 I COMMAND  [conn75] command local.oplog.rs command: getMore { getMore: 21216038738, collection: "oplog.rs", maxTimeMS: 5000, term: 12, lastKnownCommittedOpTime: { ts: Timestamp 1456358022000|1, t: 12 } } cursorid:21216038738 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7197733ms
+2016-02-24T20:54:32.015-0500 I NETWORK  [conn75] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:59253] 
+2016-02-24T20:54:32.015-0500 I COMMAND  [conn78] command local.oplog.rs command: getMore { getMore: 20708649480, collection: "oplog.rs", maxTimeMS: 5000, term: 12, lastKnownCommittedOpTime: { ts: Timestamp 1456358022000|1, t: 12 } } cursorid:20708649480 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7197260ms
+2016-02-24T20:54:32.015-0500 I NETWORK  [conn78] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:59258] 
+2016-02-24T20:54:32.016-0500 I NETWORK  [conn67] end connection 127.0.0.1:59150 (6 connections now open)
+2016-02-24T20:54:32.016-0500 I NETWORK  [conn72] end connection 127.0.0.1:59239 (6 connections now open)
+2016-02-24T20:54:32.018-0500 I NETWORK  [conn68] end connection 127.0.0.1:59156 (1 connection now open)
+2016-02-24T20:54:32.021-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59299 #79 (2 connections now open)
+2016-02-24T20:54:32.032-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59304 #80 (3 connections now open)
+2016-02-24T20:54:32.042-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59305 #81 (4 connections now open)
+2016-02-24T20:54:32.043-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59308 #82 (5 connections now open)
+2016-02-24T20:54:37.018-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state PRIMARY
+2016-02-24T20:54:37.035-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27019
+2016-02-24T20:54:37.035-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27019
+2016-02-24T20:54:37.037-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27019
+2016-02-24T22:36:05.011-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27019
+2016-02-24T22:36:05.011-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-24T22:36:05.011-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-24T22:36:05.012-0500 I REPL     [SyncSourceFeedback] SyncSourceFeedback error sending update: network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27019' 
+2016-02-24T22:36:05.017-0500 I REPL     [SyncSourceFeedback] updateUpstream failed: HostUnreachable network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27019' , will retry
+2016-02-24T22:36:05.017-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-24T22:36:05.018-0500 I NETWORK  [conn81] end connection 127.0.0.1:59305 (4 connections now open)
+2016-02-24T22:36:05.018-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-24T22:36:05.019-0500 I NETWORK  [conn71] end connection 127.0.0.1:59233 (3 connections now open)
+2016-02-24T22:36:05.019-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-24T22:36:05.019-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state PRIMARY
+2016-02-24T22:36:05.019-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59424 #83 (4 connections now open)
+2016-02-24T22:36:05.020-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27018 because: already voted for another candidate this term, resp:{ term: 14, voteGranted: false, reason: "already voted for another candidate this term", ok: 1.0 }
+2016-02-24T22:36:05.020-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27019 because: already voted for another candidate this term, resp:{ term: 14, voteGranted: false, reason: "already voted for another candidate this term", ok: 1.0 }
+2016-02-24T22:36:05.020-0500 I REPL     [ReplicationExecutor] not becoming primary, we received insufficient votes
+2016-02-24T22:36:05.021-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-24T22:36:05.022-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-24T22:36:05.029-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59430 #84 (5 connections now open)
+2016-02-24T22:36:05.030-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:59436 #85 (6 connections now open)
+2016-02-24T22:36:10.043-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27018
+2016-02-24T22:36:10.307-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27018
+2016-02-24T22:36:10.308-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27018
+2016-02-24T22:39:16.895-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-24T22:54:21.936-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-24T23:09:27.138-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-24T23:24:32.361-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-24T23:39:37.692-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-24T23:54:43.081-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-25T00:09:48.282-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-25T00:24:53.493-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-25T00:37:13.006-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-25T00:37:15.218-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-25T00:37:15.218-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-25T00:37:15.218-0500 I COMMAND  [conn79] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 14 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 2209ms
+2016-02-25T00:37:15.218-0500 I COMMAND  [conn84] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 14 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 2209ms
+2016-02-25T00:37:15.218-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 2000, after storageEngine: 2000, after wiredTiger: 2000, at end: 2000 }
+2016-02-25T00:37:15.236-0500 I REPL     [ReplicationExecutor] Error in heartbeat request to localhost:27018; HostUnreachable End of file
+2016-02-25T00:37:15.237-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-25T00:37:15.237-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T00:37:15.238-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-25T00:37:15.238-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 15
+2016-02-25T00:37:15.238-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-25T00:37:15.238-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-25T00:37:15.239-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T00:37:15.427-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T00:37:15.427-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T00:37:15.427-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T00:37:16.226-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-25T00:37:20.263-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61934 #86 (7 connections now open)
+2016-02-25T00:37:20.264-0500 I NETWORK  [conn86] end connection 127.0.0.1:61934 (6 connections now open)
+2016-02-25T00:37:20.264-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61935 #87 (7 connections now open)
+2016-02-25T00:37:20.266-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61938 #88 (8 connections now open)
+2016-02-25T00:37:20.460-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61939 #89 (9 connections now open)
+2016-02-25T00:37:20.461-0500 I NETWORK  [conn89] end connection 127.0.0.1:61939 (8 connections now open)
+2016-02-25T00:37:20.461-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61940 #90 (9 connections now open)
+2016-02-25T00:37:20.462-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61943 #91 (10 connections now open)
+2016-02-25T02:38:05.007-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-25T02:38:05.007-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-25T02:38:05.008-0500 I REPL     [replExecDBWorker-0] transition to SECONDARY
+2016-02-25T02:38:05.008-0500 I NETWORK  [conn85] end connection 127.0.0.1:59436 (9 connections now open)
+2016-02-25T02:38:05.008-0500 I NETWORK  [conn82] end connection 127.0.0.1:59308 (9 connections now open)
+2016-02-25T02:38:05.009-0500 I NETWORK  [conn90] end connection 127.0.0.1:61940 (9 connections now open)
+2016-02-25T02:38:05.009-0500 I NETWORK  [conn84] end connection 127.0.0.1:59430 (9 connections now open)
+2016-02-25T02:38:05.011-0500 I NETWORK  [conn83] end connection 127.0.0.1:59424 (9 connections now open)
+2016-02-25T02:38:05.012-0500 I NETWORK  [conn87] end connection 127.0.0.1:61935 (9 connections now open)
+2016-02-25T02:38:05.012-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-25T02:38:05.013-0500 I COMMAND  [conn88] command local.oplog.rs command: getMore { getMore: 21078247016, collection: "oplog.rs", maxTimeMS: 5000, term: 15, lastKnownCommittedOpTime: { ts: Timestamp 1456378636000|1, t: 15 } } cursorid:21078247016 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7199622ms
+2016-02-25T02:38:05.013-0500 I NETWORK  [conn88] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:61938] 
+2016-02-25T02:38:05.013-0500 I COMMAND  [conn91] command local.oplog.rs command: getMore { getMore: 19854870343, collection: "oplog.rs", maxTimeMS: 5000, term: 15, lastKnownCommittedOpTime: { ts: Timestamp 1456378636000|1, t: 15 } } cursorid:19854870343 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7199486ms
+2016-02-25T02:38:05.013-0500 I NETWORK  [conn91] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:61943] 
+2016-02-25T02:38:05.014-0500 I NETWORK  [conn79] end connection 127.0.0.1:59299 (6 connections now open)
+2016-02-25T02:38:05.014-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-25T02:38:05.016-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61969 #92 (2 connections now open)
+2016-02-25T02:38:05.027-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61972 #93 (3 connections now open)
+2016-02-25T02:38:05.027-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61975 #94 (4 connections now open)
+2016-02-25T02:38:05.028-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61981 #95 (5 connections now open)
+2016-02-25T02:38:05.028-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61984 #96 (6 connections now open)
+2016-02-25T02:38:08.836-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:61990 #97 (7 connections now open)
+2016-02-25T02:38:10.016-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state PRIMARY
+2016-02-25T02:38:10.045-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27018
+2016-02-25T02:38:10.045-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27018
+2016-02-25T02:38:10.047-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27018
+2016-02-25T04:38:58.007-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-25T04:38:58.008-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-25T04:38:58.017-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62083 #98 (8 connections now open)
+2016-02-25T04:39:01.909-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-25T04:39:01.910-0500 I COMMAND  [conn96] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 16 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3901ms
+2016-02-25T04:39:01.910-0500 I COMMAND  [conn97] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 16 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3901ms
+2016-02-25T04:39:01.910-0500 I COMMAND  [conn80] command local.replset.election command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 16, candidateIndex: 2, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456385886000|1, t: 16 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:63 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_command 3901ms
+2016-02-25T04:39:01.910-0500 I NETWORK  [conn97] end connection 127.0.0.1:61990 (7 connections now open)
+2016-02-25T04:39:01.910-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-25T04:39:01.912-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27019 because: already voted for another candidate this term, resp:{ term: 17, voteGranted: false, reason: "already voted for another candidate this term", ok: 1.0 }
+2016-02-25T04:39:02.689-0500 I REPL     [ReplicationExecutor] Error in heartbeat request to localhost:27018; HostUnreachable End of file
+2016-02-25T04:39:02.689-0500 I REPL     [ReplicationExecutor] VoteRequester: Got failed response from localhost:27018: HostUnreachable End of file
+2016-02-25T04:39:02.689-0500 I REPL     [ReplicationExecutor] not becoming primary, we received insufficient votes
+2016-02-25T04:39:02.690-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T04:39:03.448-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T04:39:03.449-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-25T04:39:16.923-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state PRIMARY
+2016-02-25T04:39:17.014-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27019
+2016-02-25T04:39:17.015-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27019
+2016-02-25T04:39:17.016-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27019
+2016-02-25T06:39:51.006-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-25T06:39:51.006-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-25T06:39:51.008-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-25T06:39:51.014-0500 I REPL     [ReplicationExecutor] Error in heartbeat request to localhost:27019; HostUnreachable End of file
+2016-02-25T06:39:51.014-0500 I NETWORK  [conn96] end connection 127.0.0.1:61984 (6 connections now open)
+2016-02-25T06:39:51.016-0500 I REPL     [ReplicationExecutor] not running for primary, we have been superceded already
+2016-02-25T06:39:51.017-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-25T06:39:51.029-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T06:39:51.030-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state PRIMARY
+2016-02-25T06:39:51.039-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T06:39:51.039-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T06:39:56.049-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27018
+2016-02-25T06:39:56.050-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27018
+2016-02-25T06:39:56.257-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27018
+2016-02-25T08:40:44.007-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-25T08:40:44.007-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-25T08:40:44.012-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-25T08:40:44.013-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-25T08:40:44.015-0500 I NETWORK  [conn98] end connection 127.0.0.1:62083 (5 connections now open)
+2016-02-25T08:40:44.016-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 20
+2016-02-25T08:40:44.016-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-25T08:40:44.016-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-25T08:40:44.019-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62447 #99 (6 connections now open)
+2016-02-25T08:40:44.030-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T08:40:44.031-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-25T08:40:44.039-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T08:40:44.039-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T08:40:45.025-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-25T08:40:49.040-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62479 #100 (7 connections now open)
+2016-02-25T08:40:49.040-0500 I NETWORK  [conn100] end connection 127.0.0.1:62479 (6 connections now open)
+2016-02-25T08:40:49.041-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62482 #101 (7 connections now open)
+2016-02-25T08:40:49.052-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62483 #102 (8 connections now open)
+2016-02-25T08:40:49.053-0500 I NETWORK  [conn102] end connection 127.0.0.1:62483 (7 connections now open)
+2016-02-25T08:40:49.053-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62484 #103 (8 connections now open)
+2016-02-25T08:40:49.054-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62487 #104 (9 connections now open)
+2016-02-25T08:40:49.308-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62492 #105 (10 connections now open)
+2016-02-25T10:41:37.015-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-25T10:41:37.015-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-25T10:41:37.016-0500 I REPL     [replExecDBWorker-0] transition to SECONDARY
+2016-02-25T10:41:37.016-0500 I NETWORK  [conn105] end connection 127.0.0.1:62492 (9 connections now open)
+2016-02-25T10:41:37.016-0500 I NETWORK  [conn103] end connection 127.0.0.1:62484 (9 connections now open)
+2016-02-25T10:41:37.017-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-25T10:41:37.017-0500 I COMMAND  [conn101] command local.oplog.rs command: getMore { getMore: 19369398840, collection: "oplog.rs", maxTimeMS: 5000, term: 20, lastKnownCommittedOpTime: { ts: Timestamp 1456407645000|1, t: 20 } } cursorid:19369398840 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7197089ms
+2016-02-25T10:41:37.017-0500 I COMMAND  [conn104] command local.oplog.rs command: getMore { getMore: 21339578980, collection: "oplog.rs", maxTimeMS: 5000, term: 20, lastKnownCommittedOpTime: { ts: Timestamp 1456407645000|1, t: 20 } } cursorid:21339578980 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7197089ms
+2016-02-25T10:41:37.017-0500 I NETWORK  [conn101] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:62482] 
+2016-02-25T10:41:37.017-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-25T10:41:37.019-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62634 #106 (9 connections now open)
+2016-02-25T10:41:40.542-0500 I NETWORK  [conn104] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:62487] 
+2016-02-25T10:41:40.543-0500 I COMMAND  [conn94] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 20 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 3526ms
+2016-02-25T10:41:40.543-0500 I COMMAND  [conn95] command admin.$cmd command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 20, candidateIndex: 1, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456407645000|1, t: 20 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:98 locks:{} protocol:op_command 3526ms
+2016-02-25T10:41:40.543-0500 I COMMAND  [conn99] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 20 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 3526ms
+2016-02-25T10:41:40.543-0500 I NETWORK  [conn94] end connection 127.0.0.1:61975 (6 connections now open)
+2016-02-25T10:41:40.543-0500 I NETWORK  [conn99] end connection 127.0.0.1:62447 (6 connections now open)
+2016-02-25T10:41:40.543-0500 I NETWORK  [conn95] end connection 127.0.0.1:61981 (5 connections now open)
+2016-02-25T10:41:40.543-0500 I COMMAND  [conn80] command admin.$cmd command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 20, candidateIndex: 2, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456407645000|1, t: 20 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:98 locks:{} protocol:op_command 3526ms
+2016-02-25T10:41:40.543-0500 I COMMAND  [conn93] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 20 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:296 locks:{} protocol:op_command 3526ms
+2016-02-25T10:41:40.543-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62640 #107 (5 connections now open)
+2016-02-25T10:41:40.543-0500 I NETWORK  [conn80] end connection 127.0.0.1:59304 (3 connections now open)
+2016-02-25T10:41:40.544-0500 I COMMAND  [conn92] command local.replset.election command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: false, term: 21, candidateIndex: 1, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456407645000|1, t: 20 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:63 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 649 } } } protocol:op_command 3527ms
+2016-02-25T10:41:42.020-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state PRIMARY
+2016-02-25T10:41:42.555-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27018
+2016-02-25T10:41:42.556-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27018
+2016-02-25T10:41:42.557-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27018
+2016-02-25T12:42:30.007-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-25T12:42:33.658-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62841 #108 (5 connections now open)
+2016-02-25T12:42:34.009-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62847 #109 (6 connections now open)
+2016-02-25T12:42:34.009-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-25T12:42:34.009-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62850 #110 (7 connections now open)
+2016-02-25T12:42:34.009-0500 I REPL     [SyncSourceFeedback] SyncSourceFeedback error sending update: network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27018' 
+2016-02-25T12:42:34.009-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-25T12:42:34.010-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-25T12:42:34.010-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27018 because: candidate's term is lower than mine, resp:{ term: 22, voteGranted: false, reason: "candidate's term is lower than mine", ok: 1.0 }
+2016-02-25T12:42:34.010-0500 I REPL     [SyncSourceFeedback] updateUpstream failed: HostUnreachable network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27018' , will retry
+2016-02-25T12:42:34.010-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 3403, after storageEngine: 3403, after wiredTiger: 3403, at end: 3403 }
+2016-02-25T12:42:34.010-0500 I REPL     [ReplicationExecutor] not running for primary, we have been superceded already
+2016-02-25T12:42:34.010-0500 I COMMAND  [conn92] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 21 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:327 locks:{} protocol:op_command 3999ms
+2016-02-25T12:42:34.010-0500 I COMMAND  [conn107] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 21 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:327 locks:{} protocol:op_command 3999ms
+2016-02-25T12:42:34.010-0500 I NETWORK  [conn107] end connection 127.0.0.1:62640 (6 connections now open)
+2016-02-25T12:42:34.011-0500 I COMMAND  [conn106] command local.replset.election command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 21, candidateIndex: 2, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456414901000|1, t: 21 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:63 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_command 359ms
+2016-02-25T12:42:34.011-0500 I NETWORK  [conn106] end connection 127.0.0.1:62634 (5 connections now open)
+2016-02-25T12:42:34.011-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state PRIMARY
+2016-02-25T12:42:39.040-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27019
+2016-02-25T12:42:39.041-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27019
+2016-02-25T12:42:39.042-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27019
+2016-02-25T14:43:23.013-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-25T14:43:26.415-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-25T14:43:26.415-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27018
+2016-02-25T14:43:26.415-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27018
+2016-02-25T14:43:26.415-0500 I ASIO     [ReplicationExecutor] after drop, pool was empty, going to spawn some connections
+2016-02-25T14:43:26.426-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:62936 #111 (6 connections now open)
+2016-02-25T14:43:26.577-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-25T14:43:26.578-0500 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 0, after globalLock: 0, after locks: 0, after network: 0, after opcounters: 0, after opcountersRepl: 0, after repl: 3281, after storageEngine: 3281, after wiredTiger: 3281, at end: 3281 }
+2016-02-25T14:43:26.582-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-25T14:43:26.587-0500 I COMMAND  [conn92] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27018", fromId: 1, term: 22 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3573ms
+2016-02-25T14:43:26.587-0500 I NETWORK  [conn92] end connection 127.0.0.1:61969 (5 connections now open)
+2016-02-25T14:43:26.588-0500 I COMMAND  [conn108] command admin.$cmd command: replSetHeartbeat { replSetHeartbeat: "m101", configVersion: 1, from: "localhost:27019", fromId: 2, term: 22 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:346 locks:{} protocol:op_command 3571ms
+2016-02-25T14:43:26.588-0500 I COMMAND  [conn93] command admin.$cmd command: replSetRequestVotes { replSetRequestVotes: 1, setName: "m101", dryRun: true, term: 22, candidateIndex: 1, configVersion: 1, lastCommittedOp: { ts: Timestamp 1456422154000|1, t: 22 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:98 locks:{} protocol:op_command 163ms
+2016-02-25T14:43:26.589-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 23
+2016-02-25T14:43:26.589-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-25T14:43:26.589-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-25T14:43:26.590-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T14:43:26.598-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T14:43:26.598-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T14:43:26.599-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-25T14:43:26.608-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T14:43:27.586-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-25T14:43:31.615-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63007 #112 (6 connections now open)
+2016-02-25T14:43:31.616-0500 I NETWORK  [conn112] end connection 127.0.0.1:63007 (5 connections now open)
+2016-02-25T14:43:31.616-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63008 #113 (6 connections now open)
+2016-02-25T14:43:31.617-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63011 #114 (7 connections now open)
+2016-02-25T14:43:32.471-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63016 #115 (8 connections now open)
+2016-02-25T14:43:32.471-0500 I NETWORK  [conn115] end connection 127.0.0.1:63016 (7 connections now open)
+2016-02-25T14:43:32.472-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63017 #116 (8 connections now open)
+2016-02-25T14:43:32.475-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63020 #117 (9 connections now open)
+2016-02-25T16:44:16.009-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-25T16:44:16.009-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-25T16:44:16.012-0500 I REPL     [replExecDBWorker-1] transition to SECONDARY
+2016-02-25T16:44:16.013-0500 I NETWORK  [conn116] end connection 127.0.0.1:63017 (8 connections now open)
+2016-02-25T16:44:16.013-0500 I NETWORK  [conn113] end connection 127.0.0.1:63008 (8 connections now open)
+2016-02-25T16:44:16.013-0500 I NETWORK  [conn109] end connection 127.0.0.1:62847 (8 connections now open)
+2016-02-25T16:44:16.014-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-25T16:44:16.014-0500 I COMMAND  [conn114] command local.oplog.rs command: getMore { getMore: 19577056198, collection: "oplog.rs", maxTimeMS: 5000, term: 23, lastKnownCommittedOpTime: { ts: Timestamp 1456429407000|1, t: 23 } } cursorid:19577056198 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7198916ms
+2016-02-25T16:44:16.015-0500 I NETWORK  [conn114] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:63011] 
+2016-02-25T16:44:16.015-0500 I COMMAND  [conn117] command local.oplog.rs command: getMore { getMore: 19792662050, collection: "oplog.rs", maxTimeMS: 5000, term: 23, lastKnownCommittedOpTime: { ts: Timestamp 1456429407000|1, t: 23 } } cursorid:19792662050 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 7198477ms
+2016-02-25T16:44:16.015-0500 I NETWORK  [conn117] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:63020] 
+2016-02-25T16:44:16.015-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-25T16:44:16.016-0500 I NETWORK  [conn108] end connection 127.0.0.1:62841 (5 connections now open)
+2016-02-25T16:44:16.016-0500 I NETWORK  [conn111] end connection 127.0.0.1:62936 (5 connections now open)
+2016-02-25T16:44:16.017-0500 I NETWORK  [conn110] end connection 127.0.0.1:62850 (1 connection now open)
+2016-02-25T16:44:16.021-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63068 #118 (2 connections now open)
+2016-02-25T16:44:16.032-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63069 #119 (3 connections now open)
+2016-02-25T16:44:16.042-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63075 #120 (4 connections now open)
+2016-02-25T16:44:16.043-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63078 #121 (5 connections now open)
+2016-02-25T16:44:21.015-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state PRIMARY
+2016-02-25T16:44:21.048-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27019
+2016-02-25T16:44:21.049-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27019
+2016-02-25T16:44:21.600-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27019
+2016-02-25T18:45:09.008-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-25T18:45:09.008-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-25T18:45:09.011-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-25T18:45:09.011-0500 I ASIO     [ReplicationExecutor] dropping unhealthy pooled connection to localhost:27019
+2016-02-25T18:45:09.011-0500 I ASIO     [ReplicationExecutor] after drop, pool was empty, going to spawn some connections
+2016-02-25T18:45:09.013-0500 I NETWORK  [conn119] end connection 127.0.0.1:63069 (4 connections now open)
+2016-02-25T18:45:09.013-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-25T18:45:09.015-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63185 #122 (5 connections now open)
+2016-02-25T18:45:09.015-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27018 because: already voted for another candidate this term, resp:{ term: 25, voteGranted: false, reason: "already voted for another candidate this term", ok: 1.0 }
+2016-02-25T18:45:09.016-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T18:45:09.029-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T18:45:09.029-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-25T18:45:09.030-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27019 because: already voted for another candidate this term, resp:{ term: 25, voteGranted: false, reason: "already voted for another candidate this term", ok: 1.0 }
+2016-02-25T18:45:09.030-0500 I REPL     [ReplicationExecutor] not becoming primary, we received insufficient votes
+2016-02-25T18:45:09.031-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T18:45:14.016-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state PRIMARY
+2016-02-25T18:45:14.051-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27018
+2016-02-25T18:45:14.051-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27018
+2016-02-25T18:45:14.053-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27018
+2016-02-25T20:46:02.008-0500 I REPL     [ReplicationExecutor] Starting an election, since we've seen no PRIMARY in the past 10000ms
+2016-02-25T20:46:02.008-0500 I REPL     [ReplicationExecutor] conducting a dry run election to see if we could be elected
+2016-02-25T20:46:02.010-0500 I REPL     [SyncSourceFeedback] SyncSourceFeedback error sending update: network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27018' 
+2016-02-25T20:46:02.010-0500 I REPL     [ReplicationExecutor] could not find member to sync from
+2016-02-25T20:46:02.012-0500 I REPL     [SyncSourceFeedback] updateUpstream failed: HostUnreachable network error while attempting to run command 'replSetUpdatePosition' on host 'localhost:27018' , will retry
+2016-02-25T20:46:02.013-0500 I NETWORK  [conn121] end connection 127.0.0.1:63078 (4 connections now open)
+2016-02-25T20:46:02.013-0500 I REPL     [ReplicationExecutor] dry election run succeeded, running for election
+2016-02-25T20:46:02.015-0500 I REPL     [ReplicationExecutor] VoteRequester: Got no vote from localhost:27019 because: already voted for another candidate this term, resp:{ term: 26, voteGranted: false, reason: "already voted for another candidate this term", ok: 1.0 }
+2016-02-25T20:46:02.017-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T20:46:02.018-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-25T20:46:02.019-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27019
+2016-02-25T20:46:02.019-0500 I REPL     [ReplicationExecutor] election succeeded, assuming primary role in term 26
+2016-02-25T20:46:02.019-0500 I REPL     [ReplicationExecutor] transition to PRIMARY
+2016-02-25T20:46:02.019-0500 W REPL     [ReplicationExecutor] The liveness timeout does not match callback handle, so not resetting it.
+2016-02-25T20:46:02.041-0500 I ASIO     [NetworkInterfaceASIO-Replication-0] Successfully connected to localhost:27018
+2016-02-25T20:46:03.020-0500 I REPL     [rsSync] transition to primary complete; database writes are now permitted
+2016-02-25T20:46:07.056-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63457 #123 (5 connections now open)
+2016-02-25T20:46:07.058-0500 I NETWORK  [conn123] end connection 127.0.0.1:63457 (4 connections now open)
+2016-02-25T20:46:07.058-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63458 #124 (5 connections now open)
+2016-02-25T20:46:07.059-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63461 #125 (6 connections now open)
+2016-02-25T20:46:07.324-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63466 #126 (7 connections now open)
+2016-02-25T20:46:07.679-0500 I NETWORK  [conn126] end connection 127.0.0.1:63466 (6 connections now open)
+2016-02-25T20:46:07.679-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63467 #127 (7 connections now open)
+2016-02-25T20:46:07.680-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63470 #128 (8 connections now open)
+2016-02-25T22:35:23.008-0500 I REPL     [ReplicationExecutor] can't see a majority of the set, relinquishing primary
+2016-02-25T22:35:23.008-0500 I REPL     [ReplicationExecutor] Stepping down from primary in response to heartbeat
+2016-02-25T22:35:23.009-0500 I REPL     [replExecDBWorker-1] transition to SECONDARY
+2016-02-25T22:35:23.012-0500 I NETWORK  [conn118] end connection 127.0.0.1:63068 (7 connections now open)
+2016-02-25T22:35:23.013-0500 I NETWORK  [conn127] end connection 127.0.0.1:63467 (7 connections now open)
+2016-02-25T22:35:23.013-0500 I NETWORK  [conn124] end connection 127.0.0.1:63458 (7 connections now open)
+2016-02-25T22:35:23.013-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state SECONDARY
+2016-02-25T22:35:23.014-0500 I COMMAND  [conn125] command local.oplog.rs command: getMore { getMore: 21158820915, collection: "oplog.rs", maxTimeMS: 5000, term: 26, lastKnownCommittedOpTime: { ts: Timestamp 1456451163000|1, t: 26 } } cursorid:21158820915 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 6505045ms
+2016-02-25T22:35:23.014-0500 I NETWORK  [conn125] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:63461] 
+2016-02-25T22:35:23.014-0500 I COMMAND  [conn128] command local.oplog.rs command: getMore { getMore: 18852848636, collection: "oplog.rs", maxTimeMS: 5000, term: 26, lastKnownCommittedOpTime: { ts: Timestamp 1456451163000|1, t: 26 } } cursorid:18852848636 keyUpdates:0 writeConflicts:0 numYields:1 nreturned:0 reslen:266 locks:{ Global: { acquireCount: { r: 6 } }, Database: { acquireCount: { r: 3 } }, oplog: { acquireCount: { r: 3 } } } protocol:op_command 6505045ms
+2016-02-25T22:35:23.014-0500 I NETWORK  [conn128] SocketException handling request, closing client connection: 9001 socket exception [SEND_ERROR] server [127.0.0.1:63470] 
+2016-02-25T22:35:23.015-0500 I NETWORK  [conn122] end connection 127.0.0.1:63185 (3 connections now open)
+2016-02-25T22:35:23.016-0500 I REPL     [ReplicationExecutor] Member localhost:27019 is now in state SECONDARY
+2016-02-25T22:35:23.018-0500 I NETWORK  [conn93] end connection 127.0.0.1:61972 (1 connection now open)
+2016-02-25T22:35:23.018-0500 I NETWORK  [conn120] end connection 127.0.0.1:63075 (0 connections now open)
+2016-02-25T22:35:23.019-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63610 #129 (1 connection now open)
+2016-02-25T22:35:23.030-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63613 #130 (2 connections now open)
+2016-02-25T22:35:23.033-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63619 #131 (3 connections now open)
+2016-02-25T22:35:23.041-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63623 #132 (4 connections now open)
+2016-02-25T22:35:23.041-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:63628 #133 (5 connections now open)
+2016-02-25T22:35:28.015-0500 I REPL     [ReplicationExecutor] Member localhost:27018 is now in state PRIMARY
+2016-02-25T22:35:28.046-0500 I REPL     [ReplicationExecutor] syncing from: localhost:27018
+2016-02-25T22:35:28.048-0500 I REPL     [SyncSourceFeedback] setting syncSourceFeedback to localhost:27018
+2016-02-25T22:35:28.050-0500 I ASIO     [NetworkInterfaceASIO-BGSync-0] Successfully connected to localhost:27018
+2016-02-25T22:36:32.647-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-25T22:51:38.103-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-25T23:06:43.194-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-25T23:21:48.889-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-25T23:36:54.381-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-25T23:51:59.551-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-25T23:53:34.293-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64638 #134 (6 connections now open)
+2016-02-25T23:55:25.345-0500 I NETWORK  [conn134] end connection 127.0.0.1:64638 (5 connections now open)
+2016-02-25T23:55:27.908-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64640 #135 (6 connections now open)
+2016-02-25T23:56:35.392-0500 I NETWORK  [conn135] end connection 127.0.0.1:64640 (5 connections now open)
+2016-02-25T23:56:36.837-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64653 #136 (6 connections now open)
+2016-02-25T23:56:38.440-0500 I NETWORK  [conn136] end connection 127.0.0.1:64653 (5 connections now open)
+2016-02-26T00:07:04.956-0500 W NETWORK  [HostnameCanonicalizationWorker] Failed to obtain name info for: [ (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6::ac69, "nodename nor servname provided, or not known"), (2601:8c:c101:58b6:ba8d:12ff:fe3e:2ef0, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known"), (10.0.0.234, "nodename nor servname provided, or not known") ]
+2016-02-26T00:12:53.119-0500 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:64820 #137 (6 connections now open)
+2016-02-26T00:13:09.845-0500 I COMMAND  [conn137] terminating, shutdown command received
+2016-02-26T00:13:09.851-0500 I FTDC     [conn137] Shutting down full-time diagnostic data capture
+2016-02-26T00:13:09.862-0500 I REPL     [conn137] Stopping replication applier threads
+2016-02-26T00:13:10.292-0500 I STORAGE  [conn130] got request after shutdown()
+2016-02-26T00:13:10.320-0500 I STORAGE  [conn133] got request after shutdown()
+2016-02-26T00:13:10.320-0500 I STORAGE  [conn131] got request after shutdown()
+2016-02-26T00:13:11.261-0500 I STORAGE  [conn132] got request after shutdown()
+2016-02-26T00:13:11.289-0500 I STORAGE  [conn129] got request after shutdown()
+2016-02-26T00:13:14.086-0500 W EXECUTOR [rsBackgroundSync] killCursors command task failed: CallbackCanceled Callback canceled
+2016-02-26T00:13:14.106-0500 I CONTROL  [conn137] now exiting
+2016-02-26T00:13:14.106-0500 I NETWORK  [conn137] shutdown: going to close listening sockets...
+2016-02-26T00:13:14.107-0500 I NETWORK  [conn137] closing listening socket: 6
+2016-02-26T00:13:14.107-0500 I NETWORK  [conn137] closing listening socket: 7
+2016-02-26T00:13:14.107-0500 I NETWORK  [conn137] removing socket file: /tmp/mongodb-27017.sock
+2016-02-26T00:13:14.133-0500 I NETWORK  [conn137] shutdown: going to flush diaglog...
+2016-02-26T00:13:14.133-0500 I NETWORK  [conn137] shutdown: going to close sockets...
+2016-02-26T00:13:14.165-0500 I STORAGE  [conn137] WiredTigerKVEngine shutting down
+2016-02-26T00:13:15.405-0500 I STORAGE  [conn137] shutdown: removing fs lock...
+2016-02-26T00:13:15.431-0500 I CONTROL  [conn137] dbexit:  rc: 0
