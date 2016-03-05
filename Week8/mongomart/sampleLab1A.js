@@ -1,25 +1,25 @@
 db.item.aggregate([
-    { $match: {"category":{$ne:null}}},
     { $project: { category: 1, _id: 1}},
     { $unwind: "$category"},
     { $group: {
-         _id: { name: "$category"},
-         uniqueCategories: {$addToSet: "$num"},
-         count: {$sum: 1}
+         _id: "$category",
+         num: {$addToSet: "$_id"}
     }},
     { $project: {
         _id: 1,
-        num: 1,
-        uniqueCategories: {$size: "$uniqueCategories"}
-    }}
+        num: {$size: "$num"}
+    }},
+    { $sort:
+        {_id: 1}
+    }
 ]);
 
-// returns
-// { "_id" : { "name" : "Electronics" }, "uniqueCategories" : 0 }
-// { "_id" : { "name" : "Books" }, "uniqueCategories" : 0 }
-// { "_id" : { "name" : "Apparel" }, "uniqueCategories" : 0 }
-// { "_id" : { "name" : "Stickers" }, "uniqueCategories" : 0 }
-// { "_id" : { "name" : "Swag" }, "uniqueCategories" : 0 }
-// { "_id" : { "name" : "Office" }, "uniqueCategories" : 0 }
-// { "_id" : { "name" : "Umbrellas" }, "uniqueCategories" : 0 }
-// { "_id" : { "name" : "Kitchen" }, "uniqueCategories" : 0 }
+// // returns
+// { "_id" : "Apparel", "num" : 6 }
+// { "_id" : "Books", "num" : 3 }
+// { "_id" : "Electronics", "num" : 3 }
+// { "_id" : "Kitchen", "num" : 3 }
+// { "_id" : "Office", "num" : 2 }
+// { "_id" : "Stickers", "num" : 2 }
+// { "_id" : "Swag", "num" : 2 }
+// { "_id" : "Umbrellas", "num" : 2 }
