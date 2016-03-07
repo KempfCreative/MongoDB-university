@@ -26,50 +26,50 @@ function ItemDAO(database) {
 
     this.getCategories = function(callback) {
         "use strict";
-        
-        /*
-        * TODO-lab1A
-        *
-        * LAB #1A: 
-        * Create an aggregation query to return the total number of items in each category. The
-        * documents in the array output by your aggregation should contain fields for 
-        * "_id" and "num". HINT: Test your mongodb query in the shell first before implementing 
-        * it in JavaScript.
-        *
-        * Ensure categories are organized in alphabetical order before passing to the callback.
-        *
-        * Include a document for category "All" in the categories to pass to the callback. All
-        * should identify the total number of documents across all categories.
-        *
-        */
-
-        var categories = [];
-        var category = {
-            _id: "All",
-            num: 9999
-        };
-
-        categories.push(category)
-
-        // TODO-lab1A Replace all code above (in this method).
-        
-        callback(categories);
-    }
+        var allItems = {_id:"All", num:0};
+        this.db.collection('item').aggregate([
+            { $project: { category: 1, _id: 1}},
+            { $unwind: "$category"},
+            { $group: {
+                 _id: "$category",
+                 num: {$addToSet: "$_id"}
+            }},
+            { $project: {
+                _id: 1,
+                num: {$size: "$num"}
+            }},
+            { $sort:
+                {_id: 1}
+            }
+        ], function (err, result){
+            assert.equal(null, err);
+            if (!result) {
+                console.log("No Document found!");
+            }
+            // create the All category with num
+            for (var i=0; result.length > i; i++){
+                allItems.num=allItems.num+result[i].num;
+            }
+            result.unshift(allItems);
+            console.log("result unshifted", result);
+            callback(result);
+        });
+    };
 
 
     this.getItems = function(category, page, itemsPerPage, callback) {
         "use strict";
-        
+
         /*
          * TODO-lab1B
          *
-         * LAB #1B: 
+         * LAB #1B:
          * Create a query to select only the items that should be displayed for a particular
-         * page. For example, on the first page, only the first itemsPerPage should be displayed. 
-         * Use limit() and skip() and the method parameters: page and itemsPerPage to identify 
-         * the appropriate products. Pass these items to the callback function. 
+         * page. For example, on the first page, only the first itemsPerPage should be displayed.
+         * Use limit() and skip() and the method parameters: page and itemsPerPage to identify
+         * the appropriate products. Pass these items to the callback function.
          *
-         * Do NOT sort items. 
+         * Do NOT sort items.
          *
          */
 
@@ -87,7 +87,7 @@ function ItemDAO(database) {
 
     this.getNumItems = function(category, callback) {
         "use strict";
-        
+
         var numItems = 0;
 
         /*
@@ -101,29 +101,29 @@ function ItemDAO(database) {
          * getNumItems() method.
          *
          */
-        
+
         callback(numItems);
     }
 
 
     this.searchItems = function(query, page, itemsPerPage, callback) {
         "use strict";
-        
+
         /*
          * TODO-lab2A
          *
          * LAB #2A: Using the value of the query parameter passed to this method, perform
-         * a text search against the item collection. Do not sort the results. Select only 
-         * the items that should be displayed for a particular page. For example, on the 
-         * first page, only the first itemsPerPage matching the query should be displayed. 
-         * Use limit() and skip() and the method parameters: page and itemsPerPage to 
-         * select the appropriate matching products. Pass these items to the callback 
-         * function. 
+         * a text search against the item collection. Do not sort the results. Select only
+         * the items that should be displayed for a particular page. For example, on the
+         * first page, only the first itemsPerPage matching the query should be displayed.
+         * Use limit() and skip() and the method parameters: page and itemsPerPage to
+         * select the appropriate matching products. Pass these items to the callback
+         * function.
          *
          * You will need to create a single text index on title, slogan, and description.
          *
          */
-        
+
         var item = this.createDummyItem();
         var items = [];
         for (var i=0; i<5; i++) {
@@ -140,7 +140,7 @@ function ItemDAO(database) {
         "use strict";
 
         var numItems = 0;
-        
+
         /*
         * TODO-lab2B
         *
@@ -164,7 +164,7 @@ function ItemDAO(database) {
          * to the callback function.
          *
          */
-        
+
         var item = this.createDummyItem();
 
         // TODO-lab3 Replace all code above (in this method).
@@ -191,8 +191,8 @@ function ItemDAO(database) {
         /*
          * TODO-lab4
          *
-         * LAB #4: Add a review to an item document. Reviews are stored as an 
-         * array value for the key "reviews". Each review has the fields: "name", "comment", 
+         * LAB #4: Add a review to an item document. Reviews are stored as an
+         * array value for the key "reviews". Each review has the fields: "name", "comment",
          * "stars", and "date".
          *
          */
