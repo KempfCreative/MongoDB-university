@@ -27,7 +27,13 @@ function CartDAO(database) {
     
     this.getCart = function(userId, callback) {
         "use strict";
-        
+
+        var cursor = this.db.collection('cart').find({"userId":userId}).project({"userId": 1, "items": 1});
+        cursor.next(function(err, result){
+            assert.equal(null, err);
+            console.log("USERCART: ", result);
+            callback(result);
+        })
         /*
         * TODO-lab5
         *
@@ -36,18 +42,7 @@ function CartDAO(database) {
         * callback function.
         *
         */
-
-        var userCart = {
-            userId: userId,
-            items: []
-        }
-        var dummyItem = this.createDummyItem();
-        userCart.items.push(dummyItem);
-        
-        // TODO-lab5 Replace all code above (in this method).
-
-        callback(userCart);
-    }
+    };
 
 
     this.itemInCart = function(userId, itemId, callback) {
