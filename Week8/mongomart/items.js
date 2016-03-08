@@ -244,6 +244,23 @@ function ItemDAO(database) {
     this.addReview = function(itemId, comment, name, stars, callback) {
         "use strict";
 
+        var reviewDoc = {
+            name: name,
+            comment: comment,
+            stars: stars,
+            date: Date.now()
+        }
+
+        var collection = this.db.collection('item');
+
+        collection.updateOne(
+            { _id: itemId },
+            { "$push": {"reviews":reviewDoc}},
+            function(err, doc){
+                assert.equal(null, err);
+                callback(doc);
+            }
+        )
         /*
          * TODO-lab4
          *
@@ -252,18 +269,7 @@ function ItemDAO(database) {
          * "stars", and "date".
          *
          */
-
-        var reviewDoc = {
-            name: name,
-            comment: comment,
-            stars: stars,
-            date: Date.now()
-        }
-
-        var dummyItem = this.createDummyItem();
-        dummyItem.reviews = [reviewDoc];
-        callback(dummyItem);
-    }
+    };
 
 
     this.createDummyItem = function() {
