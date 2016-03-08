@@ -78,8 +78,8 @@ function ItemDAO(database) {
         console.log("PAGE: ", page);
         console.log("ITEMS PER PAGE: ", itemsPerPage);
 
-        this.createDummyItem = function(){
-            console.log("Inside createDummyItem");
+        this.getPageItems = function(){
+            console.log("Inside getPageItems");
             var pageItems = [];
             if(category === "All"){
                 var query = {};
@@ -103,7 +103,7 @@ function ItemDAO(database) {
 
             );
         };
-        this.createDummyItem();
+        this.getPageItems();
         // TODO-lab1B Replace all code above (in this method).
     };
 
@@ -142,6 +142,29 @@ function ItemDAO(database) {
 
     this.searchItems = function(query, page, itemsPerPage, callback) {
         "use strict";
+        var self = this;
+        var query = query;
+        this.getSearchPageItems = function(){
+            console.log("Inside getSearchPageItems");
+            var searchPageItems = [];
+
+            var skip = page * itemsPerPage;
+
+            var limit = itemsPerPage;
+            console.log("QUERY: ", query);
+            var cursor = self.db.collection('item').find({$text:{$search:query}}).skip(skip).limit(limit);
+            cursor.forEach(
+                function(doc){
+                    searchPageItems.push(doc);
+                },
+                function(err){
+                    assert.equal(err,null);
+                    callback(searchPageItems);
+                }
+
+            );
+        };
+        this.getSearchPageItems();
 
         /*
          * TODO-lab2A
@@ -158,15 +181,7 @@ function ItemDAO(database) {
          *
          */
 
-        var item = this.createDummyItem();
-        var items = [];
-        for (var i=0; i<5; i++) {
-            items.push(item);
-        }
-
         // TODO-lab2A Replace all code above (in this method).
-
-        callback(items);
     }
 
 
@@ -175,6 +190,15 @@ function ItemDAO(database) {
 
         var numItems = 0;
 
+        var cursor = this.db.collection('item').find({$text:{$search:query}});
+        cursor.count(function(err, count){
+            assert.equal(err, null);
+            if(count){
+                var numItems = count;
+                console.log("NUMITEMS INSIDE: ", numItems);
+                callback(numItems);
+            }
+        });
         /*
         * TODO-lab2B
         *
@@ -183,14 +207,17 @@ function ItemDAO(database) {
         * to the callback function.
         *
         */
-
-        callback(numItems);
     }
 
 
     this.getItem = function(itemId, callback) {
         "use strict";
 
+        var cursor = this.db.collection('item').find({_id: itemId}).limit(1);
+        cursor.next(function(err, doc){
+            assert.equal(null, err);
+            callback(doc);
+        });
         /*
          * TODO-lab3
          *
@@ -199,11 +226,6 @@ function ItemDAO(database) {
          *
          */
 
-        var item = this.createDummyItem();
-
-        // TODO-lab3 Replace all code above (in this method).
-
-        callback(item);
     }
 
 
