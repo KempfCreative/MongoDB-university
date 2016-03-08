@@ -126,7 +126,6 @@ function ItemDAO(database) {
                 callback(numItems);
             }
         });
-        console.log("NUMITEMS OUTSIDE: ", numItems);
         /*
          * TODO-lab1C
          *
