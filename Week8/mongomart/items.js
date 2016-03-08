@@ -72,24 +72,61 @@ function ItemDAO(database) {
          * Do NOT sort items.
          *
          */
+        var self = this;
 
-        var pageItem = this.createDummyItem();
-        var pageItems = [];
-        for (var i=0; i<5; i++) {
-            pageItems.push(pageItem);
-        }
+        console.log("CATEGORY: ", category);
+        console.log("PAGE: ", page);
+        console.log("ITEMS PER PAGE: ", itemsPerPage);
 
+        this.createDummyItem = function(){
+            console.log("Inside createDummyItem");
+            var pageItems = [];
+            if(category === "All"){
+                var query = {};
+            }else {
+                var query = {"category":category};
+            }
+            var skip = page * itemsPerPage;
+
+            var limit = itemsPerPage;
+
+            var cursor = self.db.collection('item').find(query).skip(skip).limit(limit);
+            cursor.forEach(
+                function(doc){
+                    pageItems.push(doc);
+                },
+                function(err){
+                    assert.equal(err,null);
+                    callback(pageItems);
+                    // return self.db.close();
+                }
+
+            );
+        };
+        this.createDummyItem();
         // TODO-lab1B Replace all code above (in this method).
-
-        callback(pageItems);
-    }
+    };
 
 
     this.getNumItems = function(category, callback) {
         "use strict";
-
+        console.log(category);
         var numItems = 0;
-
+        if(category === "All"){
+            var query = {};
+        }else {
+            var query = {"category":category};
+        }
+        var cursor = this.db.collection('item').find(query);
+        cursor.count(function(err, count){
+            assert.equal(err, null);
+            if(count){
+                var numItems = count;
+                console.log("NUMITEMS INSIDE: ", numItems);
+                callback(numItems);
+            }
+        });
+        console.log("NUMITEMS OUTSIDE: ", numItems);
         /*
          * TODO-lab1C
          *
@@ -101,9 +138,7 @@ function ItemDAO(database) {
          * getNumItems() method.
          *
          */
-
-        callback(numItems);
-    }
+    };
 
 
     this.searchItems = function(query, page, itemsPerPage, callback) {
